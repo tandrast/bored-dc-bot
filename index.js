@@ -5,7 +5,7 @@ const { Client, Collection, Intents } = require('discord.js');
 // setup enviroment variables
 dotenv.config();
 
-const client = new Client({intents: [Intents.FLAGS.GUILDS]});
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -16,7 +16,7 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    console.log('Ready!');
+	console.log('Ready!');
 });
 
 client.on('interactionCreate', async interaction => {
